@@ -1,0 +1,24 @@
+{
+  "name": "qrcode",
+  "version": "1.0.0",
+  "description": "Minimal QR Codes generator.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass -w scss/styles.scss:dist/css/styles.css"
+  },
+  "author": "Théo",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.63.6"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theo-feschotte/qrcode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/theo-feschotte/qrcode/issues"
+  },
+  "homepage": "https://github.com/theo-feschotte/qrcode#readme"
+}

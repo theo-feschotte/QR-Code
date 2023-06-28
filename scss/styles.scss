@@ -44,13 +44,93 @@ body {
     height: 100vh;
     min-height: 100vh;
     max-height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-color: $light-grey;
+    background-color: $dark-grey;
     overflow: hidden;
+    border: solid 1px red;
 }
 
-.qrcodes {
+.qrcode {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    border: solid 1px green;
+    &__settings {
+        width: 50%;
+        padding: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        h1 {
+            margin-bottom: 15px;
+            color: $white;
+            text-transform: uppercase;
+        }
+        label[for=textQRC] {
+            margin-bottom: 5px;
+            color: $green;
+            text-transform: uppercase;
+        }
+        input {
+            width: 100%;
+            padding: 10px 15px;
+            color: $white;
+            border: none;
+            outline: none;
+            background-color: $grey;
+            &::placeholder {
+                color: $light-grey;
+            }
+        }
+        &--colors {
+            &--code,
+            &--background {
+                label {
+                    color: $green;
+                    text-transform: uppercase;
+                }
+                input {
+                    width: 50px;
+                    height: auto;
+                    aspect-ratio: 1/1;
+                    padding: 0;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+    &__render {
+        width: 50%;
+        padding: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $white;
+        &--qrcode {
+            width: 256px;
+            height: auto;
+            aspect-ratio: 1/1;
+            margin: 0 auto;
+            background-image: url('../images/pas-si-vite.png');
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        &--text {
+            margin-top: 25px;
+            text-align: center;
+            &-entered {
+                color: $dark-grey;
+            }
+        }
+    }
+}
+
+.i-see-you {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -59,4 +139,197 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 50px;
+    background-color: $white;
+    &__texts {
+        width: calc(55% - 25px);
+        h1 {
+            color: $dark-grey;
+        }
+        h2 {
+            color: $dark-grey;
+            margin: 5px 0 15px 0;
+        }
+        p {
+            margin-bottom: 25px;
+            color: $light-grey;
+        }
+        a {
+            color: $grey;
+        }
+    }
+    &__image {
+        width: calc(45% - 25px);
+        height: 100%;
+    }
 }
+
+// ------------------------------------------------------------------------
+// ------------------------------ OLD STYLES ------------------------------
+// ------------------------------------------------------------------------
+
+// @media screen and (min-width: 1000px) {
+//     body {
+//         width: 100%;
+//         height: 100vh;
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: center;
+//         align-items: center;
+//         background-color: var(--noir);
+//         overflow: hidden;
+//     }
+    
+//     body#i-see-you {
+//         background-color: var(--blanc);
+//         user-select: none;
+//     }
+//     body#i-see-you h1 {
+//         margin: 0;
+//         color: var(--noir);
+//         font-size: 2em;
+//         font-weight: 900;
+//         text-transform: uppercase;
+//         text-align: right;
+//     }
+//     body#i-see-you span {
+//         margin-top: 10px;
+//         display: block;
+//         color: var(--gris);
+//         font-size: 1.5em;
+//         font-weight: 600;
+//         text-transform: none;
+//         text-align: right;
+//     }
+//     body#i-see-you a {
+//         margin-top: 25px;
+//         display: block;
+//         color: var(--gris);
+//         font-size: 0.75em;
+//         font-weight: 400;
+//         text-align: right;
+//     }
+//     body#i-see-you a:hover {
+//         color: var(--noir);
+//     }
+//     body#i-see-you img {
+//         width: 25%;
+//         position: initial;
+//         top: initial;
+//         z-index: initial;
+//     }
+
+//     section:nth-child(1) {
+//         width: 50%;
+//         height: 100vh;
+//         padding: 100px;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: flex-start;
+//         background-color: var(--noir);
+//     }
+    
+//     h1 {
+//         margin-bottom: 25px;
+//         color: var(--blanc);
+//         font-size: 1.5em;
+//         font-weight: 900;
+//         text-transform: uppercase;
+//     }
+    
+//     label[for=textQRC] {
+//         margin-bottom: 10px;
+//         color: var(--vert);
+//         font-size: 0.75em;
+//         font-weight: 600;
+//         text-transform: uppercase;
+//         text-align: center;
+//     }
+    
+//     input#textQRC {
+//         width: 100%;
+//         padding: 10px;
+//         color: var(--blanc);
+//         font-size: 1em;
+//         font-weight: 600;
+//         border: none;
+//         outline: none;
+//         background-color: var(--noir2);
+//     }
+//     input#textQRC::placeholder {
+//         color: var(--gris);
+//         font-size: 1em;
+//         font-weight: 400;
+//     }
+    
+//     #colorsInputContainer {
+//         width: 100%;
+//         margin-top: 50px;
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: center;
+//     }
+    
+//     div#colorQRCcontainer,
+//     div#colorBkgQRCcontainer {
+//         width: 75px;
+//         margin: 0 50px;
+//         display: flex;
+//         flex-direction: column-reverse;
+//         justify-content: flex-end;
+//         align-items: center;
+//     }
+    
+//     input#colorQRC,
+//     input#colorBkgQRC {
+//         width: 75px;
+//         height: 75px;
+//         margin-bottom: 10px;
+//         border: none;
+//         background-color: transparent;
+//     }
+    
+//     label[for=colorQRC],
+//     label[for=colorBkgQRC] {
+//         width: 100px;
+//         color: var(--vert);
+//         font-size: 0.75em;
+//         font-weight: 600;
+//         text-transform: uppercase;
+//         text-align: center;
+//     }
+    
+//     section:nth-child(2) {
+//         width: 50%;
+//         height: 100vh;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//         background-color: var(--blanc);
+//     }
+    
+//     div#containerQRC {
+//         width: 256px;
+//         height: 256px;
+//         background-image: url('../images/pas-si-vite.png');
+//         background-size: contain;
+//         background-repeat: no-repeat;
+//         background-position: center center;
+//     }
+    
+//     section:nth-child(2) p {
+//         margin-top: 50px;
+//         color: var(--noir2);
+//         font-size: 0.75em;
+//         font-weight: 400;
+//         text-align: center;
+//     }
+    
+//     section:nth-child(2) p span#enteredText {
+//         color: var(--noir);
+//         font-size: 1.25em;
+//         font-weight: 700;
+//     }
+// }

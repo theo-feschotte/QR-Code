@@ -24,13 +24,88 @@ body {
   height: 100vh;
   min-height: 100vh;
   max-height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-color: hsl(0, 0%, 50%);
+  background-color: hsl(0, 0%, 5%);
   overflow: hidden;
+  border: solid 1px red;
 }
 
-.qrcodes {
+.qrcode {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  border: solid 1px green;
+}
+.qrcode__settings {
+  width: 50%;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.qrcode__settings h1 {
+  margin-bottom: 15px;
+  color: hsl(0, 0%, 100%);
+  text-transform: uppercase;
+}
+.qrcode__settings label[for=textQRC] {
+  margin-bottom: 5px;
+  color: hsl(150, 100%, 60%);
+  text-transform: uppercase;
+}
+.qrcode__settings input {
+  width: 100%;
+  padding: 10px 15px;
+  color: hsl(0, 0%, 100%);
+  border: none;
+  outline: none;
+  background-color: hsl(222, 10%, 15%);
+}
+.qrcode__settings input::placeholder {
+  color: hsl(0, 0%, 50%);
+}
+.qrcode__settings--colors--code label, .qrcode__settings--colors--background label {
+  color: hsl(150, 100%, 60%);
+  text-transform: uppercase;
+}
+.qrcode__settings--colors--code input, .qrcode__settings--colors--background input {
+  width: 50px;
+  height: auto;
+  aspect-ratio: 1/1;
+  padding: 0;
+  background-color: transparent;
+}
+.qrcode__render {
+  width: 50%;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0, 0%, 100%);
+}
+.qrcode__render--qrcode {
+  width: 256px;
+  height: auto;
+  aspect-ratio: 1/1;
+  margin: 0 auto;
+  background-image: url("../images/pas-si-vite.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.qrcode__render--text {
+  margin-top: 25px;
+  text-align: center;
+}
+.qrcode__render--text-entered {
+  color: hsl(0, 0%, 5%);
+}
+
+.i-see-you {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -39,6 +114,29 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 50px;
+  background-color: hsl(0, 0%, 100%);
+}
+.i-see-you__texts {
+  width: calc(55% - 25px);
+}
+.i-see-you__texts h1 {
+  color: hsl(0, 0%, 5%);
+}
+.i-see-you__texts h2 {
+  color: hsl(0, 0%, 5%);
+  margin: 5px 0 15px 0;
+}
+.i-see-you__texts p {
+  margin-bottom: 25px;
+  color: hsl(0, 0%, 50%);
+}
+.i-see-you__texts a {
+  color: hsl(222, 10%, 15%);
+}
+.i-see-you__image {
+  width: calc(45% - 25px);
+  height: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */

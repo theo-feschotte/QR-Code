@@ -13,30 +13,39 @@
     <link rel="icon" href="/dist/images/favicon.png">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/dist/css/old-style.css">
+    <link rel="stylesheet" href="/dist/css/styles.css">
 </head>
 
 <body>
 
-    <section>
-        <h1>Génère des QR Code rapidement !</h1>
-        <label for="textQRC">Entre ton lien à partager</label>
-        <input id="textQRC" name="textQRC" type="url" placeholder="https://exemple-lien.com">
-        <div id="colorsInputContainer">
-            <div id="colorQRCcontainer">
-                <label for="colorQRC">Couleur du QR Code</label>
-                <input id="colorQRC" name="colorQRC" type="color" value="#000000">
-            </div>
-            <div id="colorBkgQRCcontainer">
-                <label for="colorBkgQRC">Couleur de fond</label>
-                <input id="colorBkgQRC" name="colorBkgQRC" type="color" value="#ffffff">
-            </div>
-        </div>
-    </section>
+    <section class="qrcode">
 
-    <section>
-        <div id="containerQRC"></div>
-        <p>Flash ce QR Code pour accèder à :<br><span id="enteredText">exemple-lien.com</span></p>
+        <section class="qrcode__settings">
+
+            <h1>Génère des QR Codes rapidement !</h1>
+            <label for="textQRC">Entre ton lien à partager</label>
+            <input id="textQRC" name="textQRC" type="url" placeholder="https://exemple-lien.com">
+
+            <div class="qrcode__settings--colors" id="colorsInputContainer">
+                <div class="qrcode__settings--colors--code" id="colorQRCcontainer">
+                    <label for="colorQRC">Couleur du QR Code</label>
+                    <input id="colorQRC" name="colorQRC" type="color" value="#000000">
+                </div>
+                <div class="qrcode__settings--colors--background" id="colorBkgQRCcontainer">
+                    <label for="colorBkgQRC">Couleur de fond</label>
+                    <input id="colorBkgQRC" name="colorBkgQRC" type="color" value="#ffffff">
+                </div>
+            </div>
+
+        </section>
+    
+        <section class="qrcode__render">
+            <div class="qrcode__render--qrcode" id="containerQRC"></div>
+            <p class="qrcode__render--text">Flash ce QR Code pour accèder à :<br>
+                <span class="qrcode__render--text-entered" id="enteredText">exemple-lien.com</span>
+            </p>
+        </section>
+
     </section>
 
 <!-- Scripts -->

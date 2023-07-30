@@ -10,7 +10,7 @@ enteredText = document.getElementById('enteredText');
 
 function generatorQRC() {
     // Changer la couleur de fond de section 2
-    document.getElementsByTagName('section')[1].style.backgroundColor = colorBkgQRC.value;
+    document.getElementsByTagName('section')[2].style.backgroundColor = colorBkgQRC.value;
 
     // Changer la couleur du paragraphe de la section 2
     document.getElementsByTagName('p')[0].style.color = colorQRC.value;
